@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registered Participants</title>
+    <style>
+		/* General Styles */
+		body {
+		    font-family: Arial, sans-serif;
+		    background-color: #f8f9fa;
+		    margin: 0;
+		    padding: 20px;
+		}
+		
+		h2 {
+		    text-align: center;
+		    color: #343a40;
+		}
+		
+		/* Table Styles */
+		table {
+		    width: 80%;
+		    margin: 20px auto;
+		    border-collapse: collapse;
+		    background-color: #ffffff;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		th, td {
+		    padding: 12px;
+		    text-align: center;
+		    border: 1px solid #ddd;
+		}
+		
+		/* Table Header */
+		th {
+		    background-color: #007bff;
+		    color: white;
+		    font-weight: bold;
+		}
+		
+		/* Table Rows */
+		tr:nth-child(even) {
+		    background-color: #f2f2f2;
+		}
+		
+		tr:hover {
+		    background-color: #dfe6e9;
+		}
+		
+		/* Responsive Design */
+		@media (max-width: 768px) {
+		    table {
+		        width: 95%;
+		    }
+		
+		    th, td {
+		        padding: 8px;
+		    }
+		}
+    	
+    </style>
+</head>
+<body>
+    <h2>List of Registered Participants</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Meal Preference</th>
+            <th>Payment Mode</th>
+        </tr>
+        <tr th:each="participant : ${participants}">
+            <td th:text="${participant.firstName} + ' ' + ${participant.lastName}"></td>
+            <td th:text="${participant.email}"></td>
+            <td th:text="${participant.phone}"></td>
+            <td th:text="${participant.mealPreference}"></td>
+            <td th:text="${participant.paymentMode}"></td>
+        </tr>
+    </table>
+</body>
+</html>

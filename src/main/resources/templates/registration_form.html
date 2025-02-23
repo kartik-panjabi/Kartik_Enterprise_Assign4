@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Workshop Registration</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+</head>
+<body>
+    <h2>Workshop Registration</h2>
+
+    <form th:action="@{/participants/save}" th:object="${participant}" method="post">
+        
+        <!-- First Column (Left) -->
+        <div class="form-column">
+            <label>First Name:</label>
+            <input type="text" th:field="*{firstName}" />
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+            <br>
+
+            <label>Last Name:</label>
+            <input type="text" th:field="*{lastName}" />
+            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+            <br>
+
+            <label>Company/Institution:</label>
+            <input type="text" th:field="*{company}" />
+            <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span>
+            <br>
+
+            <label>Address:</label>
+            <textarea th:field="*{address}"></textarea>
+            <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+            <br>
+
+            <label>City:</label>
+            <input type="text" th:field="*{city}" />
+            <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+            <br>
+
+            <label>State/Province:</label>
+            <select th:field="*{state}">
+                <option value="">-Select-</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+            </select>
+            <span th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span>
+            <br>
+
+            <label>Country:</label>
+            <select th:field="*{country}">
+                <option value="">-Select-</option>
+                <option value="Canada">Canada</option>
+                <option value="USA">USA</option>
+            </select>
+            <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></span>
+            <br>
+
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" />
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+            <br>
+
+            <label>Phone Number:</label>
+            <input type="text" th:field="*{phone}" />
+            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+            <br>
+        </div>
+
+        <!-- Second Column (Right) -->
+        <div class="form-column">
+            <div class="lunch-title">Lunch</div>
+            <label>Meal Preference:</label>
+            <select th:field="*{mealPreference}">
+                <option value="Vegetarian" selected>Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+            </select>
+            <span th:if="${#fields.hasErrors('mealPreference')}" th:errors="*{mealPreference}"></span>
+            <br>
+
+            <label>Payment Mode:</label>
+            <input type="checkbox" th:field="*{paymentMode}" value="Cash"/> Cash
+            <input type="checkbox" th:field="*{paymentMode}" value="Cheque"/> Cheque
+            <input type="checkbox" th:field="*{paymentMode}" value="Demand Draft"/> Demand Draft
+            <span th:if="${#fields.hasErrors('paymentMode')}" th:errors="*{paymentMode}"></span>
+            <br><br>
+
+            <label>DD/Cheque No.:</label>
+            <input type="text" th:field="*{chequeNumber}" />
+            <span th:if="${#fields.hasErrors('chequeNumber')}" th:errors="*{chequeNumber}"></span>
+            <br>
+
+            <label>Drawn On (Bank Name):</label>
+            <input type="text" th:field="*{bankName}" />
+            <span th:if="${#fields.hasErrors('bankName')}" th:errors="*{bankName}"></span>
+            <br>
+
+            <label>Payable At:</label>
+            <input type="text" th:field="*{payableAt}" />
+            <span th:if="${#fields.hasErrors('payableAt')}" th:errors="*{payableAt}"></span>
+            <br>
+
+            
+        </div>
+        <button type="submit">Submit</button>
+            <button type="reset" onclick="window.location.href='/participants/reset'">Reset</button>
+    </form>
+</body>
+</html>

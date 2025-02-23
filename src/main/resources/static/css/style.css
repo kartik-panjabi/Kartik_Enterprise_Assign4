@@ -1,0 +1,120 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%; /* Increased width of form */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Column Styles */
+.form-column {
+    width: 48%; /* Adjusted width to fit within form */
+    padding-left: 10px;
+    padding-right:20px;
+    box-sizing: border-box;
+    margin-left:5px;
+    /* Added margin to prevent overflow */
+}
+
+/* Labels and Inputs */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* Checkbox and Radio Styles */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Error Messages */
+span {
+    color: red;
+    font-size: 12px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 10px;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 100%; /* Adjusted for smaller screens */
+    }
+    .form-column {
+        width: 100%;
+        margin-right: 0; /* Removed margin for full-width on smaller screens */
+    }
+}
+
+/* Lunch Section Styles */
+.lunch-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
